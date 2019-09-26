@@ -188,4 +188,13 @@ class PersonaEducada extends Persona {
 
 ````
 
+# Instalar jison 
 
+````
+npm install jison -g
+
+````
+````
+jison calculator.jison
+
+```
