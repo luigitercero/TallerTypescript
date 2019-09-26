@@ -115,7 +115,6 @@ listaTipos ->  listaTipos, nombreVariable : tipoDeVariable .
 
 listaObejtos -> { nombreVariable : Valor .
 listaObejtos -> listaObejtos, nombreVariable : Valor .
-
 ````
 
 * ejemplo:
@@ -188,13 +187,55 @@ class PersonaEducada extends Persona {
 
 ````
 
-# Instalar jison 
+# Jison 
+Para instalar Jison
 
 ````
 npm install jison -g
 
 ````
+para ejecutar el archivo jison
 ````
 jison calculator.jison
 
 ```
+pera poder intergrar Jison a nuestro proyecto es necesario descomentar la linea
+
+````
+    "allowJs": true,                       /* Allow javascript files to be compiled. */
+````
+ademas para facilitar la compilacion al package.json  se agrego un script más
+````
+"compile": "jison src/compilador/compilador.jison && mv compilador.js src/compilador",
+````
+
+# Socket.io
+
+Para continur instalar los packetes de sockets
+
+````
+npm i @types/socket.io socket.io -d
+````
+
+
+
+
+
+# Interfaz Grafica
+
+https://codemirror.net/index.html
+
+La interfaz grafica fue diseñada para que el IDE funciones con uno real
+
+en la carpeta html se encuentra la interfaz
+
+#### js/cutomInit.js
+
+este archivo consta con la inicialización de los dos textbox con los los numero de linea y los los breack points
+
+#### js/pascal.js
+
+en este archivo se encuentra las configuraciones del IDE tanto el estilo como la definicion de palabras reservadas
+
+
+
