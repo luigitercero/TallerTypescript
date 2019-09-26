@@ -133,8 +133,6 @@ buena practica colocarlo con mayuscula
 ````
 nuevoTipo -> type nombreTipo = listaTipos .
 
-
-
 ````
 * ejemplo:
 ````ts
@@ -195,16 +193,19 @@ npm install jison -g
 
 ````
 para ejecutar el archivo jison
+
 ````
 jison calculator.jison
 
 ```
+
 pera poder intergrar Jison a nuestro proyecto es necesario descomentar la linea
 
-````
+````json
     "allowJs": true,                       /* Allow javascript files to be compiled. */
 ````
 ademas para facilitar la compilacion al package.json  se agrego un script más
+
 ````
 "compile": "jison src/compilador/compilador.jison && mv compilador.js src/compilador",
 ````
