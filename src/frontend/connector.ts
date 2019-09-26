@@ -1,24 +1,24 @@
 //coneccion socket io
 const socket = (window as any).io();
-interface ChatMessage {
+interface Messages {
   message:string
 }
 
-class Chat {
+class Com {
   static io:any;
   constructor(private cb: Function) {
-    Chat.io.on('message',this.cb)
+    Com.io.on('message',this.cb)
   }
   emmitMessage(message:String){
     //edentificar el tipo de mensaje en el servidor
-    Chat.io.emit('message',message);
+    Com.io.emit('message',message);
   }
 }
 
-Chat.io = socket;
+Com.io = socket;
 
 //datos recividos por el el servidor
-function messageReceived (response:any) {
+function messageReceived (response:Messages) {
   let parent =document.querySelector("#messages");
   let child = document.createElement("li");
   child.innerHTML = response.message;
@@ -29,7 +29,7 @@ function messageReceived (response:any) {
 }
 
 //instanciar un objeto
-let chat : Chat =new Chat(messageReceived);
+let chat : Com =new Com(messageReceived);
 
 //chat.emmitMessage('hola servidor');
 

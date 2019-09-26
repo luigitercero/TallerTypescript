@@ -11,8 +11,8 @@ const server = http.createServer(expressServer.app);
 const io = socketIO.listen(server);
 
 expressServer.app.use(router);
-expressServer.app.use(express.static(path.join(__dirname,'frontend')))
-
+expressServer.app.use(express.static(path.join(__dirname,'frontend')));
+expressServer.app.use(express.static(path.join(__dirname,'..','www','src')));
 
 io.on('connection',(socket:SocketIO.Socket)=>{
   console.log('New socket connected');
