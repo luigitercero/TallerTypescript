@@ -217,10 +217,6 @@ Para continur instalar los packetes de sockets
 npm i @types/socket.io socket.io -d
 ````
 
-
-
-
-
 # Interfaz Grafica
 
 https://codemirror.net/index.html
@@ -238,4 +234,92 @@ este archivo consta con la inicialización de los dos textbox con los los numero
 en este archivo se encuentra las configuraciones del IDE tanto el estilo como la definicion de palabras reservadas
 
 
+![stack Overflow](debug.png)
 
+![Botones](debug.png)
+el ID de los botones para uso es
+````
+ejecutar
+salir
+alto
+auto
+debuguer
+siguiente
+````
+ejemplo de uso
+```` js
+$('#alto').click(function (e) {
+  //agregar funcion de socket emmit 
+});
+````
+
+![editores](textos.png)
+````
+editor
+d3
+````
+````js
+//obtener datos
+editor.getValue()
+//cambiar datos datos
+editor.setValue(data);
+
+
+editor.setCursor({ 'line': data[3] - 1, 'ch': 0 });
+d3.setCursor({ 'line': data[0] - 1, 'ch': 0 });
+
+````
+
+Editar tablas Consola, Tabla de simbolos, erro
+
+````js
+//cosola
+    $('#consola').empty()
+    let a = 0;
+    data.forEach(element => {
+        $('#consola').append("<tr>"
+            + "<th>" + element + "</th>"
+            + "</tr>");
+        a++;
+    });
+//tabla de simbolos
+    if (data == "limpiar") {
+        $('#ambito').empty()
+    } else {
+        $('#ambito').append(data);
+
+    }
+//error
+    $('#error').val(data);
+````
+
+Editar la pila y heap
+
+````js
+
+    if (data == "limpiar") {
+        $('#pila').empty()
+    } else {
+        $('#pila').append(data);
+    }
+
+    if (data == "limpiar") {
+        $('#heap').empty()
+    } else {
+        $('#heap').append(data);
+    }
+````
+
+
+![editores](valores.png)
+
+Estos valores estan en tiempo real
+
+````js
+$('#ptr').empty()
+$('#ptr').append("ptr: " + data);
+$('#pth').empty()
+$('#pth').append("pth: " + data);
+$('#op').empty()
+$('#op').append("op: " + data);
+````
