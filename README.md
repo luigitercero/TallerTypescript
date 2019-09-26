@@ -89,4 +89,103 @@ ahora agregamos el entorno
   ]
 ````
 
+# Sintaxis Básica 
+
+## variables
+
+````
+declaracion -> let .
+declaracion -> var .
+
+variable -> declaracion nombreVariable : tipoDeVariable ; .
+variable -> declaracion nombreVariable : tipoDeVariable = valor; .
+````
+* ejemplo:
+````ts
+var num = 1.555;
+````
+
+## Objetos
+
+````
+objeto -> declaracion nombreVariable : listaTipos } = listaObejtos}.
+
+listaTipos ->  { nombreVariable : tipoDeVariable .
+listaTipos ->  listaTipos, nombreVariable : tipoDeVariable .
+
+listaObejtos -> { nombreVariable : Valor .
+listaObejtos -> listaObejtos, nombreVariable : Valor .
+
+````
+
+* ejemplo:
+```` ts
+let obj: {nombre:string, edad:number, abilidad:string[]} ={
+  nombre:"luis",
+  edad:24,
+  abilidad:["hablar en publico"]
+}
+````
+
+## Crear Tipado personalizado
+
+buena practica colocarlo con mayuscula
+
+````
+nuevoTipo -> type nombreTipo = listaTipos .
+
+
+
+````
+* ejemplo:
+````ts
+type Heroe = {nombre:string, edad:number, abilidad:string[]}
+
+let lui: Heroe ={
+  nombre:"luis",
+  edad:24,
+  abilidad:["hablar en publico"]
+}
+
+````
+## Clases 
+
+````ts
+class Alumno {
+  nombre:string;
+
+  constructor(nombre:string){
+    this.nombre = nombre;
+  }
+
+}
+
+let al:Alumno = new Alumno("luis");
+
+````
+## Interfaces 
+
+```` ts
+interface Point {
+    readonly x: number;
+    readonly y: number;
+}
+
+let p1: Point = { x: 10, y: 20 };
+````
+
+## Herencia
+
+````ts
+class Persona {
+    hablar(mensaje) {
+      console.log(mensaje);
+    }
+}
+
+class PersonaEducada extends Persona {
+}
+
+````
+
 

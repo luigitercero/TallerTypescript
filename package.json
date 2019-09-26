@@ -9,6 +9,7 @@
     "start": "nodemon dist/index.js",
     "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\"",
     "watchts": "tsc -w",
+    "compile": "jison src/compilador/compilador.jison && mv compilador.js src/compilador",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
