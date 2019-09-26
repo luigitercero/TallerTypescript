@@ -12,9 +12,17 @@ const io = socketIO.listen(server);
 
 expressServer.app.use(router);
 expressServer.app.use(express.static(path.join(__dirname,'frontend')))
+
+
 io.on('connection',(socket:SocketIO.Socket)=>{
-  console.log("se ha conectado un cliente");
+  console.log('New socket connected');
+  socket.on('message',(message:string)=>{
+    console.log(message);
+    io.emit('message',{message:message})
+  })
 })
+
+
 server.listen(port)
 
 
