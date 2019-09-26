@@ -206,7 +206,7 @@ pera poder intergrar Jison a nuestro proyecto es necesario descomentar la linea
 ````
 ademas para facilitar la compilacion al package.json  se agrego un script más
 
-````
+````json
 "compile": "jison src/compilador/compilador.jison && mv compilador.js src/compilador",
 ````
 
@@ -237,7 +237,7 @@ en este archivo se encuentra las configuraciones del IDE tanto el estilo como la
 
 ![stack Overflow](debug.png)
 
-![Botones](debug.png)
+![Botones](images/Botones.png)
 el ID de los botones para uso es
 ````
 ejecutar
@@ -254,7 +254,7 @@ $('#alto').click(function (e) {
 });
 ````
 
-![editores](textos.png)
+![editores](images/textos.png)
 ````
 editor
 d3
@@ -312,7 +312,7 @@ Editar la pila y heap
 ````
 
 
-![editores](valores.png)
+![editores](images/valores.png)
 
 Estos valores estan en tiempo real
 
